@@ -1,4 +1,12 @@
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
 import { DEFAULT_N_CTX } from "./context.js";
+
+const PKG_VERSION = JSON.parse(
+  readFileSync(join(dirname(fileURLToPath(import.meta.url)), "..", "..", "package.json"), "utf8"),
+).version as string;
 import {
   checkLoopBreaker,
   finalizeMcpToolText,
@@ -87,7 +95,7 @@ function handleMessage(msg: JsonRecord, tools: McpToolDef[], handlers: Record<st
             result: {
                 protocolVersion: "2024-11-05",
                 capabilities: { tools: {} },
-                serverInfo: { name: "iam-tap", version: "0.1.0" },
+                serverInfo: { name: "iam-tap", version: PKG_VERSION },
             },
         });
         return;

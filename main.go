@@ -10,7 +10,7 @@ import (
 	"github.com/kanchingyg/iam-tap/internal/policy"
 )
 
-const version = "0.1.0"
+const version = "0.1.1"
 
 func main() {
 	code := run(os.Args[1:])

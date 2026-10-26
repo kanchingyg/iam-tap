@@ -6,10 +6,6 @@
 [![JSR Score](https://jsr.io/badges/@kanchingyg/iam-tap/score)](https://jsr.io/@kanchingyg/iam-tap/score)
 [![Go](https://img.shields.io/badge/engine-Go_%2B_TypeScript-00ADD8)](https://github.com/kanchingyg/iam-tap)
 [![license](https://img.shields.io/github/license/kanchingyg/iam-tap)](https://github.com/kanchingyg/iam-tap/blob/HEAD/LICENSE)
-[![npm](https://img.shields.io/npm/v/iam-tap)](https://www.npmjs.com/package/iam-tap)
-[![JSR](https://jsr.io/badges/@kanchingyg/iam-tap)](https://jsr.io/@kanchingyg/iam-tap)
-[![Go](https://img.shields.io/badge/engine-Go-00ADD8)](https://github.com/kanchingyg/iam-tap)
-[![license](https://img.shields.io/github/license/kanchingyg/iam-tap)](https://github.com/kanchingyg/iam-tap/blob/HEAD/LICENSE)
 
 **One line:** `npx iam-tap -- npm test` (or `bunx iam-tap -- bun test`) produces a least-privilege IAM policy from real AWS SDK calls via Client-Side Monitoring (CSM UDP `:31000`).
 
@@ -52,19 +48,6 @@ iam-tap --help   # after go install
 ```
 
 Dry-run is the default: mutating MCP tools (`write_policy_file`) are blocked until you pass `--allow-write` (which disables dry-run). Policy writes are path-contained under the working directory.
-
-## MCP & local models
-
-```json
-{
-  "mcpServers": {
-    "iam-tap": {
-      "command": "npx",
-      "args": ["-y", "iam-tap", "--mcp"]
-    }
-  }
-}
-```
 
 ## MCP Tools Reference
 

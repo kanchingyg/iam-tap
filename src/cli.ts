@@ -1,7 +1,13 @@
 #!/usr/bin/env node
+/**
+ * CLI and MCP entrypoint for AWS CSM tracing and IAM policy codegen.
+ *
+ * @module
+ */
 import { spawn, type ChildProcess, type SpawnOptions } from "node:child_process";
-import { writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { readFileSync, writeFileSync } from "node:fs";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 import {
   createEphemeralCsmToken,
@@ -22,7 +28,8 @@ import {
   type McpToolDef,
 } from "./bridge.js";
 
-const VERSION = "0.1.0";
+const PKG_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const VERSION = JSON.parse(readFileSync(join(PKG_ROOT, "package.json"), "utf8")).version as string;
 
 /** Executes `parseArgv` to parse argv in `iam-tap`. */
 export function parseArgv(argv: string[]): {

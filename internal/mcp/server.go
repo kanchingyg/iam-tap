@@ -12,7 +12,7 @@ import (
 	"github.com/kanchingyg/iam-tap/internal/policy"
 )
 
-const Version = "0.1.0"
+const Version = "0.1.1"
 
 var (
 	allowWrite bool

@@ -1,3 +1,8 @@
+/**
+ * MCP bridge exports for `iam-tap` (guards, JSON-RPC, CSM helpers).
+ *
+ * @module
+ */
 export * from "./bridge/types.js";
 export * from "./bridge/context.js";
 export * from "./bridge/tool-json.js";
