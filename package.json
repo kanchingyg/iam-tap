@@ -1,0 +1,66 @@
+{
+  "name": "iam-tap",
+  "version": "0.1.1",
+  "description": "Live AWS SDK call interceptor (CSM UDP) that emits least-privilege IAM policies as JSON, Terraform, or CDK",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "iam-tap": "./bin/iam-tap.js"
+  },
+  "main": "./dist/cli.js",
+  "types": "./dist/cli.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/cli.d.ts",
+      "import": "./dist/cli.js"
+    },
+    "./bridge": {
+      "types": "./dist/bridge.d.ts",
+      "import": "./dist/bridge.js"
+    }
+  },
+  "files": [
+    "bin",
+    "dist",
+    "SKILL.md",
+    "README.md",
+    "LICENSE",
+    "jsr.json"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && vitest run",
+    "prepublishOnly": "npm run build",
+    "prepack": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "publint": "^0.3.12",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.5"
+  },
+  "author": "Augusto Cerrutti <augustocerruttisatto@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanchingyg/iam-tap.git"
+  },
+  "mcpName": "io.github.kanchingyg/iam-tap",
+  "homepage": "https://github.com/kanchingyg/iam-tap#readme",
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "cli",
+    "typescript",
+    "go",
+    "aws",
+    "iam",
+    "least-privilege",
+    "terraform",
+    "aws-cdk",
+    "cloud-security"
+  ]
+}

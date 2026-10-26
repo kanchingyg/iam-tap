@@ -1,0 +1,23 @@
+{
+  "name": "@kanchingyg/iam-tap",
+  "version": "0.1.1",
+  "description": "Live AWS SDK call interceptor (CSM UDP) that emits least-privilege IAM policies as JSON, Terraform, or CDK",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/cli.ts",
+    "./bridge": "./src/bridge.ts"
+  },
+  "publish": {
+    "include": [
+      "src/**/*.ts",
+      "LICENSE",
+      "README.md",
+      "SKILL.md",
+      "jsr.json"
+    ],
+    "exclude": [
+      "src/**/*.test.ts",
+      "src/**/*.spec.ts"
+    ]
+  }
+}
